@@ -1,26 +1,8 @@
 # bayesian_network.py
-# Example: Student exam performance Bayesian Network
-# Variables: Study(S), Difficult(D), Grade(G), Pass(P)
-#
-# Network structure:
-#   Study --> Grade
-#   Difficult --> Grade
-#   Grade --> Pass
-#
-# All probabilities are stored as conditional probability tables (CPTs)
 
-# -------------------------------------------------------
-# CPTs (Conditional Probability Tables)
-# -------------------------------------------------------
-
-# P(Study = True)
 P_study = {True: 0.6, False: 0.4}
-
-# P(Difficult = True)
 P_difficult = {True: 0.4, False: 0.6}
 
-# P(Grade = Good | Study, Difficult)
-# key: (study, difficult) -> P(grade = good)
 P_grade_good = {
     (True,  True):  0.5,
     (True,  False): 0.9,
@@ -28,12 +10,7 @@ P_grade_good = {
     (False, False): 0.4,
 }
 
-# P(Pass = True | Grade = Good)
 P_pass_given_grade = {True: 0.9, False: 0.2}
-
-# -------------------------------------------------------
-# Exact inference by enumeration
-# -------------------------------------------------------
 
 def joint_prob(study, difficult, grade_good, passed):
     """Compute the joint probability of a full assignment."""
@@ -89,10 +66,6 @@ def marginal(query_var, evidence=None):
     if denominator == 0:
         return 0.0
     return numerator / denominator
-
-# -------------------------------------------------------
-# Test cases
-# -------------------------------------------------------
 
 def run_tests():
     print("===== Bayesian Network: Student Exam Model =====")
