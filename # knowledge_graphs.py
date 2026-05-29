@@ -1,30 +1,4 @@
 # knowledge_graphs.py
-# Demonstrates building a simple Knowledge Graph in Python using a dict-based
-# triple store, and shows how RDFLib (a standard Python KG library) works.
-
-# -------------------------------------------------------
-# SECTION 1: What is a Knowledge Graph?
-# -------------------------------------------------------
-# A Knowledge Graph (KG) represents knowledge as a set of triples:
-#   (Subject, Predicate, Object)
-# e.g. ("Paris", "isCapitalOf", "France")
-#       ("Paris", "locatedIn", "Europe")
-#
-# Popular tools for KGs:
-#   - RDFLib       : Python library for RDF graphs (W3C standard)
-#   - Neo4j        : Graph database with Cypher query language
-#   - Protege      : GUI tool to build OWL ontologies
-#   - Apache Jena  : Java framework for semantic web
-#   - Wikidata     : Open KG with SPARQL endpoint
-#   - GraphDB      : Enterprise triple store
-#
-# Common formats: RDF/XML, Turtle (.ttl), JSON-LD, N-Triples
-# -------------------------------------------------------
-
-# -------------------------------------------------------
-# SECTION 2: Build a simple KG manually (no external libs)
-# -------------------------------------------------------
-
 class SimpleKG:
     """
     Triple store: stores (subject, predicate, object) triples.
