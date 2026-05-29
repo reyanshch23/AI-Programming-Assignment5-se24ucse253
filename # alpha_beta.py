@@ -1,5 +1,3 @@
-# alpha_beta.py
-
 from game import get_empty_cells, check_winner
 
 call_count = 0
