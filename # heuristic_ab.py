@@ -1,11 +1,7 @@
 # heuristic_ab.py
-# Heuristic alpha-beta: limits search depth and uses eval function
-
 from game import get_empty_cells, check_winner, is_terminal
 
 call_count = 0
-
-# simple heuristic: count lines where only X or only O pieces are present
 def heuristic_eval(board):
     lines = [
         (0,1,2),(3,4,5),(6,7,8),
@@ -18,9 +14,9 @@ def heuristic_eval(board):
         x_count = row.count('X')
         o_count = row.count('O')
         if o_count == 0:
-            score += x_count  # X has potential here
+            score += x_count  
         if x_count == 0:
-            score -= o_count  # O has potential here
+            score -= o_count  
     return score
 
 def heuristic_ab(board, depth, is_maximizing, alpha, beta, max_depth):
@@ -35,7 +31,7 @@ def heuristic_ab(board, depth, is_maximizing, alpha, beta, max_depth):
     if ' ' not in board:
         return 0
     if depth >= max_depth:
-        return heuristic_eval(board)  # cut off and estimate
+        return heuristic_eval(board)  
 
     empty = get_empty_cells(board)
 
